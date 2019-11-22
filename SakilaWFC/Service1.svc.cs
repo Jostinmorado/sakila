@@ -6,6 +6,7 @@ namespace SakilaWFC
 {
     public class Service1 : IService1
     {
+        //COUNTRY
         public List<Models.CountryModel> MostrarTodosCountry()
         {
             sakilaEntities contexto = new sakilaEntities();
@@ -54,5 +55,62 @@ namespace SakilaWFC
             contexto.SaveChanges();
             return true;
         }
+
+        //CITY
+        public List<Models.CityModel> MostrarTodosCity()
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            List<Models.CityModel> listaResultado = (from l in contexto.city
+                                                        select new Models.CityModel
+                                                        {
+                                                            cityId = l.city_id,
+                                                            city = l.city1,
+                                                            countryId = l.country_id,
+                                                            last_update = l.last_update
+                                                        }).ToList();
+            return listaResultado;
+        }
+
+        public bool InsertarCity(city nuevoCity)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            nuevoCity.last_update = DateTime.Now;
+
+            contexto.city.Add(nuevoCity);
+            contexto.SaveChanges();
+            return true;
+        }
+
+        public bool ActualizarCity(city cityActualizado)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+
+            var city_ = (from T0 in contexto.city
+                            where T0.city_id == cityActualizado.city_id
+                         select T0).FirstOrDefault();
+
+            city_.city1 = cityActualizado.city1;
+            city_.last_update = DateTime.Now;
+
+            contexto.SaveChanges();
+            return true;
+        }
+
+        public bool BorrarCity(city delCity)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            var city_ = (from T0 in contexto.city
+                         where T0.city_id == delCity.city_id
+                         select T0).FirstOrDefault();
+
+            contexto.city.Remove(city_);
+            contexto.SaveChanges();
+            return true;
+        }
+
+        //ADDRESS
+
+
+        //CUSTOMER
     }
 }

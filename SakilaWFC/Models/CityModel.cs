@@ -5,10 +5,11 @@ using System.Web;
 
 namespace SakilaWFC.Models
 {
-    public class CountryModel
+    public class CityModel
     {
-        public int country_id { get; set; }
-        public string country { get; set; }
+        public int cityId { get; set; }
+        public string city { get; set; }
+        public int countryId { get; set; }
         public DateTime? last_update { get; set; }
     }
 }
