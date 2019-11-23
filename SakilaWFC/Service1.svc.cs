@@ -110,7 +110,127 @@ namespace SakilaWFC
 
         //ADDRESS
 
+        public List<Models.AddressModel> MostrarTodosAddress()
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            List<Models.AddressModel> listaResultado = (from l in contexto.address
+                                                     select new Models.AddressModel
+                                                     {
+                                                         address_id = l.address_id,
+                                                         desc_address = l.address1,
+                                                         desc_address2 = l.address2,
+                                                         district = l.district,
+                                                         city_id = l.city_id,
+                                                         postal_code = l.postal_code,
+                                                         phone = l.phone,
+                                                         last_update = l.last_update
+                                                     }).ToList();
+            return listaResultado;
+        }
+
+        public bool InsertarAddress(address nuevoAddress)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            nuevoAddress.last_update = DateTime.Now;
+
+            contexto.address.Add(nuevoAddress);
+            contexto.SaveChanges();
+            return true;
+        }
+
+        public bool ActualizarAddress(address addressActualizado)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+
+            var address_ = (from T0 in contexto.address
+                            where T0.address_id == addressActualizado.address_id
+                            select T0).FirstOrDefault();
+
+            address_.address1 = addressActualizado.address1;
+            address_.address2 = addressActualizado.address2;
+            address_.district = addressActualizado.district;
+            address_.city_id = addressActualizado.city_id;
+            address_.postal_code = addressActualizado.postal_code;
+            address_.phone = addressActualizado.phone;
+            address_.last_update = DateTime.Now;
+
+            contexto.SaveChanges();
+            return true;
+        }
+
+        public bool BorrarAddress(address delAddress)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            var address_ = (from T0 in contexto.address
+                         where T0.address_id == delAddress.address_id
+                            select T0).FirstOrDefault();
+
+            contexto.address.Remove(address_);
+            contexto.SaveChanges();
+            return true;
+        }
 
         //CUSTOMER
+
+        public List<Models.CustomerModel> MostrarTodosCustomer()
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            List<Models.CustomerModel> listaResultado = (from l in contexto.customer
+                                                        select new Models.CustomerModel
+                                                        {
+                                                            customer_id = l.customer_id,
+                                                            store_id = l.store_id,
+                                                            first_name = l.first_name,
+                                                            last_name = l.last_name,
+                                                            email = l.email,
+                                                            address_id = l.address_id,
+                                                            active = l.active,
+                                                            create_date = l.create_date,
+                                                            last_update = l.last_update
+                                                        }).ToList();
+            return listaResultado;
+        }
+
+        public bool InsertarCustomer(customer nuevoCustomer)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            nuevoCustomer.create_date = DateTime.Now;
+            nuevoCustomer.last_update = DateTime.Now;
+
+            contexto.customer.Add(nuevoCustomer);
+            contexto.SaveChanges();
+            return true;
+        }
+
+        public bool ActualizarCustomer(customer customerActualizado)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+
+            var customer_ = (from T0 in contexto.customer
+                             where T0.customer_id == customerActualizado.customer_id
+                            select T0).FirstOrDefault();
+
+            customer_.first_name = customerActualizado.first_name;
+            customer_.last_name = customerActualizado.last_name;
+            customer_.email = customerActualizado.email;
+            customer_.address_id = customerActualizado.address_id;
+            customer_.active = customerActualizado.active;
+            customer_.last_update = DateTime.Now;
+
+            contexto.SaveChanges();
+            return true;
+        }
+
+        public bool BorrarCustomer(customer delCustomer)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+            var customer_ = (from T0 in contexto.customer
+                             where T0.customer_id == delCustomer.customer_id
+                             select T0).FirstOrDefault();
+
+            contexto.customer.Remove(customer_);
+            contexto.SaveChanges();
+            return true;
+        }
     }
 }

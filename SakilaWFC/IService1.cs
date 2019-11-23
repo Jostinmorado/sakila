@@ -33,8 +33,29 @@ namespace SakilaWFC
         bool BorrarCity(city delCity);
 
         //ADDRESS
+        [OperationContract]
+        List<Models.AddressModel> MostrarTodosAddress();
 
+        [OperationContract]
+        bool InsertarAddress(address nuevoAddress);
+
+        [OperationContract]
+        bool ActualizarAddress(address addressActualizado);
+
+        [OperationContract]
+        bool BorrarAddress(address delAddress);
 
         //CUSTOMER
+        [OperationContract]
+        List<Models.CustomerModel> MostrarTodosCustomer();
+
+        [OperationContract]
+        bool InsertarCustomer(customer nuevoCustomer);
+
+        [OperationContract]
+        bool ActualizarCustomer(customer customerActualizado);
+
+        [OperationContract]
+        bool BorrarCustomer(customer delCustomer);
     }
 }
