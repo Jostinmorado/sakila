@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Cons.ServiceReference1.CountryModel>
+
+@{
+    ViewBag.Title = "MostrarTodos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" style="margin-bottom:20px; width:10%;margin-left: 90%; margin-top:20px" href="/Country/Crear">Nuevo</a>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_update)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_update)
+        </td>
+        <td>
+            <a class="btn btn-warning" href="/Country/Modificar?id=@item.country_id">Modificar</a>
+            <a class="btn btn-danger" href="/Country/Eliminar?id=@item.country_id">Eliminar</a>
+        </td>
+    </tr>
+}
+
+</table>

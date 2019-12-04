@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54277/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54277/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54277/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" />
+      <xsd:import schemaLocation="http://localhost:54277/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SakilaWFC" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_MostrarTodosCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarTodosCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarTodosCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosCity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarTodosCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarTodosAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosAddress" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarTodosAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAddress" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAddress" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarAddress" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarTodosCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_MostrarTodosCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTodosCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertarCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ActualizarCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BorrarCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrarCustomerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="MostrarTodosCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarTodosCountry" message="tns:IService1_MostrarTodosCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarTodosCountryResponse" message="tns:IService1_MostrarTodosCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarCountry" message="tns:IService1_InsertarCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarCountryResponse" message="tns:IService1_InsertarCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerCountry" message="tns:IService1_VerCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerCountryResponse" message="tns:IService1_VerCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarCountry" message="tns:IService1_ActualizarCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarCountryResponse" message="tns:IService1_ActualizarCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BorrarCountry" message="tns:IService1_BorrarCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BorrarCountryResponse" message="tns:IService1_BorrarCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTodosCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarTodosCity" message="tns:IService1_MostrarTodosCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarTodosCityResponse" message="tns:IService1_MostrarTodosCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarCity" message="tns:IService1_InsertarCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarCityResponse" message="tns:IService1_InsertarCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarCity" message="tns:IService1_ActualizarCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarCityResponse" message="tns:IService1_ActualizarCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BorrarCity" message="tns:IService1_BorrarCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BorrarCityResponse" message="tns:IService1_BorrarCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTodosAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarTodosAddress" message="tns:IService1_MostrarTodosAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarTodosAddressResponse" message="tns:IService1_MostrarTodosAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarAddress" message="tns:IService1_InsertarAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarAddressResponse" message="tns:IService1_InsertarAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarAddress" message="tns:IService1_ActualizarAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarAddressResponse" message="tns:IService1_ActualizarAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BorrarAddress" message="tns:IService1_BorrarAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BorrarAddressResponse" message="tns:IService1_BorrarAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTodosCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/MostrarTodosCustomer" message="tns:IService1_MostrarTodosCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/MostrarTodosCustomerResponse" message="tns:IService1_MostrarTodosCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarCustomer" message="tns:IService1_InsertarCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarCustomerResponse" message="tns:IService1_InsertarCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarCustomer" message="tns:IService1_ActualizarCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ActualizarCustomerResponse" message="tns:IService1_ActualizarCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BorrarCustomer" message="tns:IService1_BorrarCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BorrarCustomerResponse" message="tns:IService1_BorrarCustomer_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MostrarTodosCountry">
+      <soap:operation soapAction="http://tempuri.org/IService1/MostrarTodosCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCountry">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertarCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerCountry">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCountry">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCountry">
+      <soap:operation soapAction="http://tempuri.org/IService1/BorrarCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTodosCity">
+      <soap:operation soapAction="http://tempuri.org/IService1/MostrarTodosCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCity">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertarCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCity">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCity">
+      <soap:operation soapAction="http://tempuri.org/IService1/BorrarCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTodosAddress">
+      <soap:operation soapAction="http://tempuri.org/IService1/MostrarTodosAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAddress">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertarAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAddress">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarAddress">
+      <soap:operation soapAction="http://tempuri.org/IService1/BorrarAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTodosCustomer">
+      <soap:operation soapAction="http://tempuri.org/IService1/MostrarTodosCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCustomer">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertarCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCustomer">
+      <soap:operation soapAction="http://tempuri.org/IService1/ActualizarCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarCustomer">
+      <soap:operation soapAction="http://tempuri.org/IService1/BorrarCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:54277/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

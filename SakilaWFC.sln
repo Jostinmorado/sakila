@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SakilaWFC", "SakilaWFC\SakilaWFC.csproj", "{B8F96601-076E-48D9-9EEE-15878E3F2F20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cons", "Cons\Cons.csproj", "{7DB332F2-D56D-4636-A40B-A6EAA5C9BCA5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B8F96601-076E-48D9-9EEE-15878E3F2F20} = {B8F96601-076E-48D9-9EEE-15878E3F2F20}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{B8F96601-076E-48D9-9EEE-15878E3F2F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8F96601-076E-48D9-9EEE-15878E3F2F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8F96601-076E-48D9-9EEE-15878E3F2F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DB332F2-D56D-4636-A40B-A6EAA5C9BCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DB332F2-D56D-4636-A40B-A6EAA5C9BCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DB332F2-D56D-4636-A40B-A6EAA5C9BCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DB332F2-D56D-4636-A40B-A6EAA5C9BCA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

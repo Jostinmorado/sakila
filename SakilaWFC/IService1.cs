@@ -14,6 +14,9 @@ namespace SakilaWFC
         bool InsertarCountry(country nuevoCountry);
 
         [OperationContract]
+        Models.CountryModel VerCountry(int idCountry);
+
+        [OperationContract]
         bool ActualizarCountry(country countryActualizado);
 
         [OperationContract]

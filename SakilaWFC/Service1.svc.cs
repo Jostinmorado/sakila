@@ -29,6 +29,21 @@ namespace SakilaWFC
             return true;
         }
 
+        public Models.CountryModel VerCountry(int idCountry)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+
+            Models.CountryModel country_ = (from c in contexto.country
+                                           where c.country_id == idCountry
+                                           select new Models.CountryModel
+                                           {
+                                                country_id = c.country_id,
+                                                country = c.country1,
+                                                last_update = c.last_update
+                                            }).FirstOrDefault();
+            return country_;
+        }
+
         public bool ActualizarCountry(country countryActualizado)
         {
             sakilaEntities contexto = new sakilaEntities();
