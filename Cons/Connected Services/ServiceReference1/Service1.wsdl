@@ -50,6 +50,12 @@
   <wsdl:message name="IService1_InsertarCity_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertarCityResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_VerCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerCity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VerCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerCityResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ActualizarCity_InputMessage">
     <wsdl:part name="parameters" element="tns:ActualizarCity" />
   </wsdl:message>
@@ -138,6 +144,10 @@
     <wsdl:operation name="InsertarCity">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertarCity" message="tns:IService1_InsertarCity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertarCityResponse" message="tns:IService1_InsertarCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VerCity" message="tns:IService1_VerCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VerCityResponse" message="tns:IService1_VerCity_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ActualizarCity">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ActualizarCity" message="tns:IService1_ActualizarCity_InputMessage" />
@@ -238,6 +248,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarCity">
       <soap:operation soapAction="http://tempuri.org/IService1/InsertarCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerCity">
+      <soap:operation soapAction="http://tempuri.org/IService1/VerCity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

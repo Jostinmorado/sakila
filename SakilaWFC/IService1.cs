@@ -20,7 +20,7 @@ namespace SakilaWFC
         bool ActualizarCountry(country countryActualizado);
 
         [OperationContract]
-        bool BorrarCountry(country countryDel);
+        bool BorrarCountry(int idCountry);
 
         //CITY
         [OperationContract]
@@ -30,10 +30,13 @@ namespace SakilaWFC
         bool InsertarCity(city nuevoCity);
 
         [OperationContract]
+        Models.CityModel VerCity(int idCity);
+
+        [OperationContract]
         bool ActualizarCity(city cityActualizado);
 
         [OperationContract]
-        bool BorrarCity(city delCity);
+        bool BorrarCity(int idCity);
 
         //ADDRESS
         [OperationContract]

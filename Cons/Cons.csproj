@@ -154,6 +154,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,6 +234,9 @@
     <Content Include="Views\Country\MostrarTodos.cshtml" />
     <Content Include="Views\Country\Crear.cshtml" />
     <Content Include="Views\Country\Modificar.cshtml" />
+    <Content Include="Views\City\MostrarTodos.cshtml" />
+    <Content Include="Views\City\Crear.cshtml" />
+    <Content Include="Views\City\Modificar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -59,7 +59,7 @@
   <xs:element name="BorrarCountry">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="countryDel" nillable="true" type="q5:country" />
+        <xs:element minOccurs="0" name="idCountry" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -78,14 +78,14 @@
   <xs:element name="MostrarTodosCityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" minOccurs="0" name="MostrarTodosCityResult" nillable="true" type="q6:ArrayOfCityModel" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" minOccurs="0" name="MostrarTodosCityResult" nillable="true" type="q5:ArrayOfCityModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertarCity">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="nuevoCity" nillable="true" type="q7:city" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="nuevoCity" nillable="true" type="q6:city" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,6 +93,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="InsertarCityResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerCity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idCity" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerCityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" minOccurs="0" name="VerCityResult" nillable="true" type="q7:CityModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -113,7 +127,7 @@
   <xs:element name="BorrarCity">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="delCity" nillable="true" type="q9:city" />
+        <xs:element minOccurs="0" name="idCity" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -132,14 +146,14 @@
   <xs:element name="MostrarTodosAddressResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" minOccurs="0" name="MostrarTodosAddressResult" nillable="true" type="q10:ArrayOfAddressModel" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" minOccurs="0" name="MostrarTodosAddressResult" nillable="true" type="q9:ArrayOfAddressModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertarAddress">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="nuevoAddress" nillable="true" type="q11:address" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="nuevoAddress" nillable="true" type="q10:address" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -153,7 +167,7 @@
   <xs:element name="ActualizarAddress">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="addressActualizado" nillable="true" type="q12:address" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="addressActualizado" nillable="true" type="q11:address" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -167,7 +181,7 @@
   <xs:element name="BorrarAddress">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="delAddress" nillable="true" type="q13:address" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="delAddress" nillable="true" type="q12:address" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -186,14 +200,14 @@
   <xs:element name="MostrarTodosCustomerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" minOccurs="0" name="MostrarTodosCustomerResult" nillable="true" type="q14:ArrayOfCustomerModel" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SakilaWFC.Models" minOccurs="0" name="MostrarTodosCustomerResult" nillable="true" type="q13:ArrayOfCustomerModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertarCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="nuevoCustomer" nillable="true" type="q15:customer" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="nuevoCustomer" nillable="true" type="q14:customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -207,7 +221,7 @@
   <xs:element name="ActualizarCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="customerActualizado" nillable="true" type="q16:customer" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="customerActualizado" nillable="true" type="q15:customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -221,7 +235,7 @@
   <xs:element name="BorrarCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="delCustomer" nillable="true" type="q17:customer" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SakilaWFC" minOccurs="0" name="delCustomer" nillable="true" type="q16:customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

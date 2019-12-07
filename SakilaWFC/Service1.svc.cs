@@ -59,11 +59,11 @@ namespace SakilaWFC
             return true;
         }
 
-        public bool BorrarCountry(country delCountry)
+        public bool BorrarCountry(int idCountry)
         {
             sakilaEntities contexto = new sakilaEntities();
             var country_ = (from T0 in contexto.country
-                            where T0.country_id == delCountry.country_id
+                            where T0.country_id == idCountry
                             select T0).FirstOrDefault();
 
             contexto.country.Remove(country_);
@@ -76,13 +76,14 @@ namespace SakilaWFC
         {
             sakilaEntities contexto = new sakilaEntities();
             List<Models.CityModel> listaResultado = (from l in contexto.city
-                                                        select new Models.CityModel
+                                                     orderby l.city_id descending
+                                                     select new Models.CityModel
                                                         {
                                                             cityId = l.city_id,
                                                             city = l.city1,
                                                             countryId = l.country_id,
                                                             last_update = l.last_update
-                                                        }).ToList();
+                                                        }).Take(200).ToList();
             return listaResultado;
         }
 
@@ -96,12 +97,28 @@ namespace SakilaWFC
             return true;
         }
 
+        public Models.CityModel VerCity(int idCity)
+        {
+            sakilaEntities contexto = new sakilaEntities();
+
+            Models.CityModel city_ = (from c in contexto.city
+                                            where c.city_id == idCity
+                                      select new Models.CityModel
+                                      {
+                                          city = c.city1,
+                                          cityId = c.city_id,
+                                          countryId = c.country_id,
+                                          last_update = c.last_update
+                                      }).FirstOrDefault();
+            return city_;
+        }
+
         public bool ActualizarCity(city cityActualizado)
         {
             sakilaEntities contexto = new sakilaEntities();
 
             var city_ = (from T0 in contexto.city
-                            where T0.city_id == cityActualizado.city_id
+                         where T0.city_id == cityActualizado.city_id
                          select T0).FirstOrDefault();
 
             city_.city1 = cityActualizado.city1;
@@ -111,11 +128,11 @@ namespace SakilaWFC
             return true;
         }
 
-        public bool BorrarCity(city delCity)
+        public bool BorrarCity(int idCity)
         {
             sakilaEntities contexto = new sakilaEntities();
             var city_ = (from T0 in contexto.city
-                         where T0.city_id == delCity.city_id
+                         where T0.city_id == idCity
                          select T0).FirstOrDefault();
 
             contexto.city.Remove(city_);

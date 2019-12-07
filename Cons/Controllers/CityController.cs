@@ -2,13 +2,13 @@
 
 namespace Cons.Controllers
 {
-    public class CountryController : Controller
+    public class CityController : Controller
     {
         ServiceReference1.Service1Client SC = new ServiceReference1.Service1Client();
 
         public ActionResult MostrarTodos()
         {
-            var lista = SC.MostrarTodosCountry();
+            var lista = SC.MostrarTodosCity();
 
             return View(lista);
         }
@@ -19,41 +19,41 @@ namespace Cons.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(ServiceReference1.CountryModel model)
+        public ActionResult Crear(ServiceReference1.CityModel model)
         {
             if (ModelState.IsValid)
             {
-                ServiceReference1.country cc = new ServiceReference1.country();
+                ServiceReference1.city cc = new ServiceReference1.city();
 
-                cc.country1 = model.country;
+                cc.city1 = model.city;
+                cc.country_id = short.Parse(model.countryId.ToString());
 
-                bool al = SC.InsertarCountry(cc);
+                bool al = SC.InsertarCity(cc);
 
                 if (al == true)
                 {
                     return RedirectToAction("Crear");
-                }  
+                }
             }
             return View(model);
         }
 
         public ActionResult Modificar(int id)
         {
-            var country_ = SC.VerCountry(id);
-            return View(country_);
+            var city_ = SC.VerCity(id);
+            return View(city_);
         }
 
         [HttpPost]
-        public ActionResult Modificar(ServiceReference1.CountryModel model)
+        public ActionResult Modificar(ServiceReference1.CityModel model)
         {
             if (ModelState.IsValid)
             {
-                ServiceReference1.country cc = new ServiceReference1.country();
+                ServiceReference1.city cc = new ServiceReference1.city();
+                cc.city1 = model.city;
+                cc.city_id = model.cityId;
 
-                cc.country1 = model.country;
-                cc.country_id = short.Parse(model.country_id.ToString());
-
-                bool al = SC.ActualizarCountry(cc);
+                bool al = SC.ActualizarCity(cc);
 
                 if (al == true)
                 {
@@ -66,7 +66,7 @@ namespace Cons.Controllers
 
         public ActionResult Eliminar(int id)
         {
-            bool country_ = SC.BorrarCountry(id);
+            bool city_ = SC.BorrarCity(id);
             return RedirectToAction("MostrarTodos");
         }
     }

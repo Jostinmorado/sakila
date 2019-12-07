@@ -1138,10 +1138,10 @@ namespace Cons.ServiceReference1 {
         System.Threading.Tasks.Task<bool> ActualizarCountryAsync(Cons.ServiceReference1.country countryActualizado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BorrarCountry", ReplyAction="http://tempuri.org/IService1/BorrarCountryResponse")]
-        bool BorrarCountry(Cons.ServiceReference1.country countryDel);
+        bool BorrarCountry(int idCountry);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BorrarCountry", ReplyAction="http://tempuri.org/IService1/BorrarCountryResponse")]
-        System.Threading.Tasks.Task<bool> BorrarCountryAsync(Cons.ServiceReference1.country countryDel);
+        System.Threading.Tasks.Task<bool> BorrarCountryAsync(int idCountry);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarTodosCity", ReplyAction="http://tempuri.org/IService1/MostrarTodosCityResponse")]
         Cons.ServiceReference1.CityModel[] MostrarTodosCity();
@@ -1155,6 +1155,12 @@ namespace Cons.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertarCity", ReplyAction="http://tempuri.org/IService1/InsertarCityResponse")]
         System.Threading.Tasks.Task<bool> InsertarCityAsync(Cons.ServiceReference1.city nuevoCity);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerCity", ReplyAction="http://tempuri.org/IService1/VerCityResponse")]
+        Cons.ServiceReference1.CityModel VerCity(int idCity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerCity", ReplyAction="http://tempuri.org/IService1/VerCityResponse")]
+        System.Threading.Tasks.Task<Cons.ServiceReference1.CityModel> VerCityAsync(int idCity);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ActualizarCity", ReplyAction="http://tempuri.org/IService1/ActualizarCityResponse")]
         bool ActualizarCity(Cons.ServiceReference1.city cityActualizado);
         
@@ -1162,10 +1168,10 @@ namespace Cons.ServiceReference1 {
         System.Threading.Tasks.Task<bool> ActualizarCityAsync(Cons.ServiceReference1.city cityActualizado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BorrarCity", ReplyAction="http://tempuri.org/IService1/BorrarCityResponse")]
-        bool BorrarCity(Cons.ServiceReference1.city delCity);
+        bool BorrarCity(int idCity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BorrarCity", ReplyAction="http://tempuri.org/IService1/BorrarCityResponse")]
-        System.Threading.Tasks.Task<bool> BorrarCityAsync(Cons.ServiceReference1.city delCity);
+        System.Threading.Tasks.Task<bool> BorrarCityAsync(int idCity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarTodosAddress", ReplyAction="http://tempuri.org/IService1/MostrarTodosAddressResponse")]
         Cons.ServiceReference1.AddressModel[] MostrarTodosAddress();
@@ -1275,12 +1281,12 @@ namespace Cons.ServiceReference1 {
             return base.Channel.ActualizarCountryAsync(countryActualizado);
         }
         
-        public bool BorrarCountry(Cons.ServiceReference1.country countryDel) {
-            return base.Channel.BorrarCountry(countryDel);
+        public bool BorrarCountry(int idCountry) {
+            return base.Channel.BorrarCountry(idCountry);
         }
         
-        public System.Threading.Tasks.Task<bool> BorrarCountryAsync(Cons.ServiceReference1.country countryDel) {
-            return base.Channel.BorrarCountryAsync(countryDel);
+        public System.Threading.Tasks.Task<bool> BorrarCountryAsync(int idCountry) {
+            return base.Channel.BorrarCountryAsync(idCountry);
         }
         
         public Cons.ServiceReference1.CityModel[] MostrarTodosCity() {
@@ -1299,6 +1305,14 @@ namespace Cons.ServiceReference1 {
             return base.Channel.InsertarCityAsync(nuevoCity);
         }
         
+        public Cons.ServiceReference1.CityModel VerCity(int idCity) {
+            return base.Channel.VerCity(idCity);
+        }
+        
+        public System.Threading.Tasks.Task<Cons.ServiceReference1.CityModel> VerCityAsync(int idCity) {
+            return base.Channel.VerCityAsync(idCity);
+        }
+        
         public bool ActualizarCity(Cons.ServiceReference1.city cityActualizado) {
             return base.Channel.ActualizarCity(cityActualizado);
         }
@@ -1307,12 +1321,12 @@ namespace Cons.ServiceReference1 {
             return base.Channel.ActualizarCityAsync(cityActualizado);
         }
         
-        public bool BorrarCity(Cons.ServiceReference1.city delCity) {
-            return base.Channel.BorrarCity(delCity);
+        public bool BorrarCity(int idCity) {
+            return base.Channel.BorrarCity(idCity);
         }
         
-        public System.Threading.Tasks.Task<bool> BorrarCityAsync(Cons.ServiceReference1.city delCity) {
-            return base.Channel.BorrarCityAsync(delCity);
+        public System.Threading.Tasks.Task<bool> BorrarCityAsync(int idCity) {
+            return base.Channel.BorrarCityAsync(idCity);
         }
         
         public Cons.ServiceReference1.AddressModel[] MostrarTodosAddress() {
