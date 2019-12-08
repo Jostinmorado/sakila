@@ -5,38 +5,49 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<a class="btn btn-success" style="margin-bottom:20px; width:10%;margin-left: 90%; margin-top:20px" href="/Country/Crear">Nuevo</a>
+@using (Html.BeginForm("MostrarTodos", "Country", FormMethod.Get))
+{
+<p>
+    <div class="col-lg-3" style="padding-left:0px;margin-bottom:20px;margin-top:20px">
+        @Html.TextBox("filter", null, new { @class = "form-control", @placeholder = "Filtrar por nombre" })
+    </div>
+    <input type="submit" value="Buscar" class="btn btn-primary" />
+
+   <a class="btn btn-success" style="margin-bottom:20px; width:10%;margin-left: 58%; margin-top:20px" href="/Country/Crear">Nuevo</a>
+</p>
+}
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.country)
+            @Html.ActionLink("Country", "MostrarTodos", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.country_id)
+            @Html.ActionLink("Country ID", "MostrarTodos", new { sortOrder = ViewBag.IDSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.last_update)
+            @Html.ActionLink("Last_Update", "MostrarTodos", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.country_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.last_update)
-        </td>
-        <td>
-            <a class="btn btn-warning" href="/Country/Modificar?id=@item.country_id">Modificar</a>
-            <a class="btn btn-danger" href="/Country/Eliminar?id=@item.country_id">Eliminar</a>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.country_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_update)
+            </td>
+            <td>
+                <a class="btn btn-warning" href="/Country/Modificar?id=@item.country_id">Modificar</a>
+                <a class="btn btn-danger" href="/Country/Eliminar?id=@item.country_id">Eliminar</a>
+            </td>
+        </tr>
+    }
 
 </table>

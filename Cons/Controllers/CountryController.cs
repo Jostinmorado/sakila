@@ -6,10 +6,13 @@ namespace Cons.Controllers
     {
         ServiceReference1.Service1Client SC = new ServiceReference1.Service1Client();
 
-        public ActionResult MostrarTodos()
+        public ActionResult MostrarTodos(string sortOrder, string filter)
         {
-            var lista = SC.MostrarTodosCountry();
+            ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "name";
+            ViewBag.IDSortParm = sortOrder == "ID" ? "id_desc" : "ID";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
+            var lista = SC.MostrarTodosCountry(sortOrder, filter);
             return View(lista);
         }
 

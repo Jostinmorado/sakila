@@ -4,7 +4,10 @@
   <xs:import schemaLocation="http://localhost:54277/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SakilaWFC" />
   <xs:element name="MostrarTodosCountry">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sortOrder" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MostrarTodosCountryResponse">

@@ -1114,10 +1114,10 @@ namespace Cons.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarTodosCountry", ReplyAction="http://tempuri.org/IService1/MostrarTodosCountryResponse")]
-        Cons.ServiceReference1.CountryModel[] MostrarTodosCountry();
+        Cons.ServiceReference1.CountryModel[] MostrarTodosCountry(string sortOrder, string filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/MostrarTodosCountry", ReplyAction="http://tempuri.org/IService1/MostrarTodosCountryResponse")]
-        System.Threading.Tasks.Task<Cons.ServiceReference1.CountryModel[]> MostrarTodosCountryAsync();
+        System.Threading.Tasks.Task<Cons.ServiceReference1.CountryModel[]> MostrarTodosCountryAsync(string sortOrder, string filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertarCountry", ReplyAction="http://tempuri.org/IService1/InsertarCountryResponse")]
         bool InsertarCountry(Cons.ServiceReference1.country nuevoCountry);
@@ -1249,12 +1249,12 @@ namespace Cons.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public Cons.ServiceReference1.CountryModel[] MostrarTodosCountry() {
-            return base.Channel.MostrarTodosCountry();
+        public Cons.ServiceReference1.CountryModel[] MostrarTodosCountry(string sortOrder, string filter) {
+            return base.Channel.MostrarTodosCountry(sortOrder, filter);
         }
         
-        public System.Threading.Tasks.Task<Cons.ServiceReference1.CountryModel[]> MostrarTodosCountryAsync() {
-            return base.Channel.MostrarTodosCountryAsync();
+        public System.Threading.Tasks.Task<Cons.ServiceReference1.CountryModel[]> MostrarTodosCountryAsync(string sortOrder, string filter) {
+            return base.Channel.MostrarTodosCountryAsync(sortOrder, filter);
         }
         
         public bool InsertarCountry(Cons.ServiceReference1.country nuevoCountry) {

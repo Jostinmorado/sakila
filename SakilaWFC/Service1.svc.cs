@@ -7,16 +7,95 @@ namespace SakilaWFC
     public class Service1 : IService1
     {
         //COUNTRY
-        public List<Models.CountryModel> MostrarTodosCountry()
+        public List<Models.CountryModel> MostrarTodosCountry(string sortOrder, string filter)
         {
             sakilaEntities contexto = new sakilaEntities();
-            List<Models.CountryModel> listaResultado = (from l in contexto.country
-                                            select new Models.CountryModel {
-                                                country= l.country1,
-                                                country_id = l.country_id,
-                                                last_update = l.last_update
-                                            }).ToList();
-            return listaResultado;
+            var listaResultado = (from l in contexto.country
+                                  select new Models.CountryModel
+                                  {
+                                      country = l.country1,
+                                      country_id = l.country_id,
+                                      last_update = l.last_update
+                                  }).ToList();
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                listaResultado = (from l in contexto.country
+                                  where l.country1.ToLower().Contains(filter.ToLower())
+                                  select new Models.CountryModel
+                                  {
+                                      country = l.country1,
+                                      country_id = l.country_id,
+                                      last_update = l.last_update
+                                  }).ToList();
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    listaResultado = (from l in contexto.country
+                                     orderby l.country1 descending
+                                     select new Models.CountryModel
+                                     {
+                                         country = l.country1,
+                                         country_id = l.country_id,
+                                         last_update = l.last_update
+                                     }).ToList();
+
+                    break;
+                case "Date":
+                    listaResultado = (from l in contexto.country
+                                     orderby l.last_update
+                                     select new Models.CountryModel
+                                     {
+                                         country = l.country1,
+                                         country_id = l.country_id,
+                                         last_update = l.last_update
+                                     }).ToList();
+                    break;
+                case "date_desc":
+                    listaResultado = (from l in contexto.country
+                                      orderby l.last_update descending
+                                      select new Models.CountryModel
+                                      {
+                                          country = l.country1,
+                                          country_id = l.country_id,
+                                          last_update = l.last_update
+                                      }).ToList();
+                    break;
+                case "ID":
+                    listaResultado = (from l in contexto.country
+                                      orderby l.country_id
+                                      select new Models.CountryModel
+                                      {
+                                          country = l.country1,
+                                          country_id = l.country_id,
+                                          last_update = l.last_update
+                                      }).ToList();
+                break;
+                case "id_desc":
+                    listaResultado = (from l in contexto.country
+                                      orderby l.country_id descending
+                                      select new Models.CountryModel
+                                      {
+                                          country = l.country1,
+                                          country_id = l.country_id,
+                                          last_update = l.last_update
+                                      }).ToList();
+                break;
+                case "name":
+                    listaResultado = (from l in contexto.country
+                                      orderby l.country1
+                                      select new Models.CountryModel
+                                      {
+                                          country = l.country1,
+                                          country_id = l.country_id,
+                                          last_update = l.last_update
+                                      }).ToList();
+                    break;
+            }
+
+            return listaResultado.ToList();
         }
 
         public bool InsertarCountry(country nuevoCountry)

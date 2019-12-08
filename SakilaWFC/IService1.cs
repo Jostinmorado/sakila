@@ -8,7 +8,7 @@ namespace SakilaWFC
     {
         //COUNTRY
         [OperationContract]
-        List<Models.CountryModel> MostrarTodosCountry();
+        List<Models.CountryModel> MostrarTodosCountry(string sortOrder, string filter);
 
         [OperationContract]
         bool InsertarCountry(country nuevoCountry);
